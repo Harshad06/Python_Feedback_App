@@ -2,15 +2,9 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from send_mail import send_mail
 
-import os
-import re
-
 app = Flask(__name__)
 
 ENV = 'prod'
-
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
-
 
 if ENV == 'dev':
     app.debug = True
