@@ -1,17 +1,20 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from send_mail import send_mail
+import os
 
 app = Flask(__name__)
 
 ENV = 'prod'
+
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
 
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/lexus'
 else:
     app.debug = False  
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ghfsumuejxcvei:614dd2eb292b192d2a8142ce1c35fab28a0aa3c62c00e4e8e07d4141452eba23@ec2-54-235-108-217.compute-1.amazonaws.com:5432/de81u04vrf8fnt'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://sopzxkyqkojrwz:d9be36b937281055fe57acb1f81d7ba9e3eb548a9c3fae08434cc15b26c93554@ec2-34-230-115-172.compute-1.amazonaws.com:5432/daoi4kufv937m5'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
