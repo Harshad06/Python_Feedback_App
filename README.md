@@ -1,9 +1,9 @@
 # Python Feedback App
-## Build & Deploy A Python Web App | Flask, Postgres & Heroku
+### Build & Deploy A Python Web App | Flask, Postgres & Heroku
 
-> Python Flask Feedback app that sends data to PostgreSQL database and emails user.
-> In this project we will build a feedback form with Python Flask, Postgresql and mailtrap.io. 
-> We will also deploy it to Heroku.
+    > Python Flask Feedback app that sends data to PostgreSQL database and emails user.
+    > In this project we will build a feedback form with Python Flask, Postgresql and mailtrap.io. 
+    > We will also deploy it to Heroku.
 
 ## Quick Start
 
