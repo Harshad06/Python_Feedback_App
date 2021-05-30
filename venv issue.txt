@@ -1,0 +1,57 @@
+
+Virtual env activate issue:-
+
+I have faced the same problem due to security reasons on Windows 10. 
+I managed to fix it by running the following command in PowerShell:
+
+Run command: 	Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Issue Link:-
+Error resolution:- https://stackoverflow.com/questions/56199111/visual-studio-code-cmd-error-cannot-be-loaded-because-running-scripts-is-disabl
+
+
+Note: The following settings line is deprecated:
+		"terminal.integrated.shellArgs.windows": ["-ExecutionPolicy", "Bypass"]
+
+
+
+https://www.youtube.com/watch?v=w25ea_I89iM
+
+
+STEPS to activate venv:
+	open terminal 
+	goto scripts location
+	from command pallate -> select venv interpreter (python one)
+	come to terminal --> enter command "activate.bat"
+
+
+Install dependencies:-
+	pipenv install flask
+	pipenv install psycopg2
+	pipenv install psycopg2-binary
+	pipenv install flask-sqlalchemy
+	pipenv install gunicorn
+
+Error resolution:- https://stackoverflow.com/questions/31252791/flask-importerror-no-module-named-flask
+
+pip3 install flask, flask-sqlalchemy
+
+
+Error:- sqlalchemy.exc.NoSuchModuleError: Can't load plugin: sqlalchemy.dialects:postgres
+Error resolution:- https://help.heroku.com/ZKNTJQSK/why-is-sqlalchemy-1-4-x-not-connecting-to-heroku-postgres
+		   https://stackoverflow.com/questions/66690321/flask-and-heroku-sqlalchemy-exc-nosuchmoduleerror-cant-load-plugin-sqlalchemy
+
+app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
+
+
+
+
+
+Error:- Heroku not connecting to Heroku Postgres with CLI
+	The local psql command could not be located.
+Error resolution:- https://stackoverflow.com/questions/53738680/heroku-not-connecting-to-heroku-postgres-with-cli
+	Add your PATH environment variable  
+	add "C:\Program Files\PostgreSQL<VERSION>\bin". If you forget to update your PATH, commands like heroku pg:psql won’t work.
+
+Start button -> Search "env" -> update local env path by adding PostgreSQL bin location.
+
