@@ -7,13 +7,14 @@ app = Flask(__name__)
 
 ENV = 'prod'
 
-SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
+
 
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/lexus'
 else:
-    app.debug = False  
+    app.debug = False 
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("://", "ql://", 1) 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://sopzxkyqkojrwz:d9be36b937281055fe57acb1f81d7ba9e3eb548a9c3fae08434cc15b26c93554@ec2-34-230-115-172.compute-1.amazonaws.com:5432/daoi4kufv937m5'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
